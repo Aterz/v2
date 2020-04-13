@@ -1,0 +1,119 @@
+{
+    "log": {
+      "access": "/var/log/v2ray/access.log",
+      "error": "/var/log/v2ray/error.log",
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        {
+          "address": "2001:4860:4860:0:0:0:0:8844",
+          "port": 53,
+          "domains": [
+            //"domain:googlehosts.org",
+            "domain:instagram.com",
+            "s.pinimg.com",
+            "i.pinimg.com",
+            "s-media-cache-ak0.pinimg.com",
+            "passets-cdn.pinterest.com",
+            //"domain:android.com",
+            "www.apkmirror.com",
+            "domain:appspot.com",
+            "withgoogle.com",
+            "domain:appspot.com",
+            "culturalspot.org",
+            "db.tt",
+            "domain:dropbox.com",
+            "www.dualstack.dropbox-dns.com",
+            "api.dropboxapi.com",
+            "dl.dropboxusercontent.com",
+            "cfl.dropboxstatic.com",
+            "log.getdropbox.com",
+            "discord.media",
+            //"facebook.com",
+            //"fb.me",
+            //"domain:fbcdn.net",
+            //"static.thefacebook.com",
+            //"domain:gmail.com",
+            //"domain:googlemail.com",
+            //"gmail.google.com",
+            //"googlemail.l.google.com",
+            //"mail-settings.google.com"
+            "geosite:google",
+            "geosite:facebook"
+
+
+
+          ]
+        },
+        "2a09:11c0:f1:bbf0::70",
+        "2001:67c:27e4::64",
+        "2001:67c:27e4:15::64",
+        "2001:67c:27e4::60",
+        "2001:67c:27e4:15::6411",
+        "2001:4860:4860::64",
+        "2001:4860:4860::8888",
+        "2606:4700:4700::1111",
+        "localhost"
+      ]
+    },
+    "stats": {},
+    "inbounds": [
+      {
+        "port": 443,
+        "listen": "0.0.0.0",
+        "protocol": "vmess",
+        "settings": {
+          "clients": [
+            {
+              "id": "3bb3fa67-6b8e-4df6-b931-1d4e0bfde276",
+              "alterId": 4
+            }
+          ]
+        },
+        "tag": "in-0",
+        "streamSettings": {
+          "network": "ws",
+          "security": "tls",
+          "wsSettings": {
+            "path": "/xicannnxkmsalqwe"
+          },
+          "tlsSettings": {
+            "certificates": [
+              {
+                "certificateFile": "/etc/v2ray/cert.pem",
+                "keyFile": "/etc/v2ray/key.pem"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "tag": "blocked",
+        "protocol": "blackhole",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "ip": [
+              "2001:4860:4860:0:0:0:0:8844"
+          ],
+          "outboundTag": "direct"
+        }
+      ]
+    },
+    "policy": {},
+    "reverse": {},
+    "transport": {}
+  }
